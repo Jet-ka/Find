@@ -1,0 +1,86 @@
+body{
+    margin:0%;
+}
+.header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:250px;
+    border-bottom: 3px solid blue ;
+    background-color: #0dcaf0ed;
+    color:white;
+}
+
+.mainbox{
+   
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: bolder;
+
+}
+
+.infoone{
+    font-family:sans-serif;
+    font-size: small;
+    font-weight: 500;
+}
+.maincontent{
+    margin-top:5px;
+    background-color: pink;
+    padding-left:10px;
+    padding-right:10px;
+    border-bottom: 2px solid pink;
+}
+.wid{
+    width:fit-content;
+    height:5%;
+}
+.card-title{
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+       
+}
+.tex{
+    
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 800;
+}
+
+
+.about{
+    padding-top: 5px;
+    padding-left:10px;
+    padding-right:10px;
+}
+.privacy{
+    padding-top: 5px;
+    padding-left:10px;
+    padding-right:10px;
+}
+.footer-basic{
+    position: static;
+    height:200px;
+      background-color: black;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+.ic{
+    display:flex;
+    justify-content: space-evenly;
+}
+.link{
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+}
+.copyright{
+    text-align: center;
+}

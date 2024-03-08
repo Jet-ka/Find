@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding</title>
+    <link rel="stylesheet" href="/css/one.css">
+    <link rel="shortcut icon" href="images/Designer.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <!---navebar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <!--i can put logo-->   
+          Finding.in</a>
+     <!--   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class=" navbar-expand" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" href="/about">About us</a>
+            <a class="nav-link active" href="tel:+916002976805" >Contact us</a>
+        
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <%if(infos.profess==="Tutor"){%>
+        <div class="main">
+     <div class="cad">
+      
+        <ul>
+       <li id="center"><img class="profile"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>"></li>
+      <li>Name :<%=infos.name%> </li>
+      <li>Subject :<%=infos.sub%> </li>
+      <li>State: <%=infos.state%> </li>
+      <li>Location : <%=infos.loc%> </li>
+      <li>Fees :<%=infos.fee%> </li>
+      <li>Conatct No. :<%=infos.con%> </li>
+      
+        </ul>
+        <div class="edit">
+          <form method="GET" action="/edit/<%=infos._id%>">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+          <form method="POST" action="/delete/<%=infos._id%>">
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+
+        </div>
+     </div>
+   
+    </div>
+  <% }%>
+  <%if(infos.profess==="cake"){%>
+  <div class="main">
+    <div class="cad">
+      <img class="landscape"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>">
+   <ul>
+   
+    <li>Name :<%=infos.name%> </li>
+    <li>Social :<%=infos.social%> </li>
+    <li>State: <%=infos.state%> </li>
+    <li>Location : <%=infos.loc%> </li>
+    <li>Fees :<%=infos.fee%> </li>
+    <li>Conatct No. :<%=infos.con%> </li>
+
+   </ul>
+   <div class="edit">
+    <form method="GET" action="/edit/<%=infos._id%>">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <form method="POST" action="/delete/<%=infos._id%>">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </form>  
+</div>
+</div>
+    </div>
+<% }%>
+<%if(infos.profess==="Beautician"){%>
+<div class="main">
+  <div class="cad">
+    <img class="landscape"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>">
+<ul>
+  <li>Name :<%=infos.name%> </li>
+  <li>Social :<%=infos.social%> </li>
+  <li>State: <%=infos.state%> </li>
+ <li>Description: <%=infos.des%></li>
+  <li>Location : <%=infos.loc%> </li>
+  <li>Fees :<%=infos.fee%> </li>
+  <li>Conatct No. :<%=infos.con%> </li>
+</ul>
+<div class="edit">
+  <form method="GET" action="/edit/<%=infos._id%>">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <form method="POST" action="/delete/<%=infos._id%>">
+    <button type="submit" class="btn btn-primary">Delete</button>
+  </form>  
+</div>
+</div>
+</div>
+<% }%>
+<%if(infos.profess==="Hostelowner"){%>
+<div class="main">
+  <div class="cad">
+    <img class="landscape"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>">
+  <ul>
+   
+    <li>Name :<%=infos.name%> </li>
+    <li>State: <%=infos.state%> </li>
+    <li>Description: <%=infos.des%></li>
+    <li>Location : <%=infos.loc%> </li>
+    <li>Fees :<%=infos.fee%> </li>
+    <li>Conatct No. :<%=infos.con%> </li>
+
+  </ul>
+  <div class="edit">
+    <form method="GET" action="/edit/<%=infos._id%>">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <form method="POST" action="/delete/<%=infos._id%>">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </form>  
+  
+</div>
+</div>
+</div>
+<% }%>
+
+</body>
+</html>

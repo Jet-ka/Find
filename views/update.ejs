@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding</title>
+    <link rel="stylesheet" href="/css/one.css">
+    <link rel="shortcut icon" href="images/Designer.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+   <%if(infos.profess==="Tutor"){%>
+        <div class="main">
+        <form method="POST" action="/tutor/<%=infos._id%>" enctype="multipart/form-data" class="container" >
+        <h3>Tutor</h3>
+     <!--   <img class="profile"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>"> -->
+       <input type="file" class="form-control" name="image" placeholder="upload your picture" required><br> 
+        <input type="text" class="form-control" name="name"  value="<%=infos.name%>" required ><br>
+        <input type="text" class="form-control" name="sub" value="<%=infos.sub%>" required ><br>
+        <input type="text" class="form-control" name="class" value="<%=infos.class%>" required ><br>
+        <input type="text" class="form-control" name="state" value="<%=infos.state%>" required ><br>
+        <input type="text" class="form-control" name="loc" value="<%=infos.loc%>" required ><br>
+        <input type="text" class="form-control" name="fee" value="<%=infos.fee%>" required><br>
+        <input type="number" class="form-control" name="con" value="<%=infos.con%>" required><br>
+      <!--  <input type="password" class="form-control" name="pass" placeholder="Write your password"required><br> -->
+    
+          <button type="submit" class="btn btn-primary">Update</button>
+       
+       </form>
+    </div>
+  <% }%>
+  <%if(infos.profess==="cake"){%>
+    <div class="main">
+    <form method="POST" action="/cake/<%=infos._id%>" enctype="multipart/form-data"  class="container" >
+    <h3>cakemaker</h3>
+ <!---   <img class="profile"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>"> -->
+    <input type="file" class="form-control" name="image"   required><br>
+    <input type="text" class="form-control" name="name" value="<%=infos.name%>" required><br>
+    <input type="text" class="form-control" name="social" value="<%=infos.social%>" required><br>
+    <input type="text" class="form-control" name="state" value="<%=infos.state%>" required><br>
+    <input type="text" class="form-control" name="loc" value="<%=infos.loc%>" required><br>
+    <input type="text" class="form-control" name="fee" value="<%=infos.fee%>" required><br>
+    <input type="number" class="form-control" name="con" value="<%=infos.con%>" equired><br>
+   
+  
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  
+</div>
+<% }%>
+
+<%if(infos.profess==="Beautician"){%>
+  <div class="main">
+  <form method="POST" action="/beauty/<%=infos._id%>" enctype="multipart/form-data" class="container" >
+  <h3>Makeup artist</h3>
+ <!-- <img class="profile"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>"> -->
+  <input type="file" class="form-control" name="image" placeholder="upload your picture"  required><br> 
+  <input type="text" class="form-control" name="name" value="<%=infos.name%>"   required><br>
+  <input type="text" class="form-control" name="social" value="<%=infos.social%>"  required><br>
+  <input type="text" class="form-control" name="des" value="<%=infos.des%>" required><br> 
+  <input type="text" class="form-control" name="state" value="<%=infos.state%>"   required><br>
+  <input type="text" class="form-control" name="loc"   value="<%=infos.location%>"  required><br>
+  <input type="text" class="form-control" name="fee" value="<%=infos.fee%>"required><br>
+  <input type="number" class="form-control" name="con"  value="<%=infos.con%>" required><br>
+ 
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+   
+</div>
+<% }%>
+<%if(infos.profess==="Hostelowner"){%>
+  <div class="main">
+  <form method="POST" action="/hostel/<%=infos._id%>" enctype="multipart/form-data"   class="container" >
+  <h3>Hostel owner</h3>
+ <!--<img class="profile"  src="data:image/jpeg;base64,<%= infos.image.data.toString('base64') %>"> --> 
+  <input type="file" class="form-control" name="image"   required><br>
+  <input type="text" class="form-control" name="name" value="<%=infos.name%>" placeholder="Write your name" required><br>
+  <input type="text" class="form-control" name="state"  value="<%=infos.state%>" placeholder="Write your state name"required><br>
+  <input type="text" class="form-control" name="loc" value="<%=infos.loc%>"  placeholder="Put your locations"required><br>
+  <input type="text" class="form-control" name="fee" value="<%=infos.fee%>" placeholder=" fees per month"required><br>
+  <input type="number" class="form-control" name="con" value="<%=infos.con%>"   placeholder="Write your contact number" equired><br>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+   
+</div>
+<% }%>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding</title>
+    <link rel="stylesheet" href="css/two.css">
+    <link rel="shortcut icon" href="images/Designer.png" type="image/x-icon">
+    <link rel="stylesheet" href="find/css/two.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+<body>
+  <!---navebar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+      <!--i can put logo-->   
+        Finding.in</a>
+   <!--   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class=" navbar-expand" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" href="/about">About us</a>
+          <a class="nav-link active" href="tel:+916002976805">Contact us</a>
+      
+        </div>
+      </div>
+    </div>
+  </nav>
+<div class="main">
+
+  <!--card info-->
+       <div class="car">
+  <!--search tutors -->
+        <form class="search" method="POST" action="/find/:object">
+          <input class="form-control me-2" type="search" placeholder="ex:Science or Jagiroad " name="object" aria-label="Search">
+          <button class="btn btn-outline-success" id="searchbutton" type="submit">Search</button>
+        </form><br> 
+
+
+  <% infos.forEach(function(data){ %>
+        <ul id="lu">
+          <img class="profile"  src="data:image/jpeg;base64,<%= data.image.data.toString('base64') %>">
+         
+          <li class="p">Name: <%= data.name %></li>
+          <li class="p">Subjects: <%= data.sub %></li>
+          <li class="p">Class: <%= data.class %></li>
+          <li class="p">State: <%= data.state %></li>
+          <li class="p">Location: <%= data.loc %></li>
+          <li class="p">Fees: <%= data.fee %></li>
+         <li> <a class="btn btn-primary" id="bt" href="https://api.whatsapp.com/send?phone=+91<%=data.con%>&text=Sir/Maam i need to discuss about tution">Contact me </a></li><br>            
+     <!--<p><%= data.con %></p>-->
+
+
+        </ul> 
+
+    
+ <% })%>
+       
+    
+        </div>
+
+
+      </div>    
+<!--card info-->
+
+
+<!--footer-->
+<div class="footer-basic">
+  <footer>
+      <div class="social ic">
+        <a href="https://www.instagram.com/wantdoor24"><i class="icon ion-social-instagram" style="font-size: 2rem; color: rgb(218, 22, 142);"></i></a>
+      
+        <a href="https://api.whatsapp.com/send?phone=+919954569181&text=Welcome"><i class="icon  ion-social-whatsapp" style="font-size: 2rem; color: rgb(218, 22, 142);"></i></a>
+        <a href="https://www.facebook.com/wantdoor"><i class="icon ion-social-facebook" style="font-size: 2rem; color:  rgb(218, 22, 142);"></i></a>
+      </div>
+      <ul class="list-inline link">
+          <li class="list-inline-item"><a href="/login">Login</a></li>
+          <li class="list-inline-item"><a href="/signin">Be a partner</a></li>
+          <li class="list-inline-item"><a href="tel:+916002976805">Contact us</a></li>
+         
+          <li class="list-inline-item"><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+      <p class="copyright">&COPY;Finding.in:2024</p>
+  </footer>
+</body>
+</html>
