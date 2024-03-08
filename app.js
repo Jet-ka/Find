@@ -25,10 +25,8 @@ const upload = multer({
 app.set('view engine','ejs');
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static('public'));
-
-
-mongoose.connect(process.env.MONGODB_URL)
-
+//database
+mongoose.connect(process.env.MONGODB_URL);
 //1st page 
 app.get('/',function(req,res){
  res.render('home.ejs')
