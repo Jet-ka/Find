@@ -127,7 +127,7 @@ app.post('/login', async function(req, res) {
 app.post('/tutor',  upload.single('image'), async function(req,res){
   try{
     if (req.file.size > 5000000) {
-      throw new Error('File size exceeds the limit of 1 MB');
+      throw new Error('File size exceeds the limit of 5 MB');
     }
 const date= await bcrypt.hash(req.body.date, 10);
    const dat= new tutor({
@@ -203,7 +203,7 @@ app.post('/find/:object', async  function(req,res){
 app.post('/cake',  upload.single('image') ,async function(req,res){
   try{
     if (req.file.size > 5000000) {
-      throw new Error('File size exceeds the limit of 1 MB');
+      throw new Error('File size exceeds the limit of 5 MB');
     }
     const date= await bcrypt.hash(req.body.date, 10);
    const data= new cake({
@@ -276,7 +276,7 @@ res.render('cake.ejs',{infos:result});
 app.post('/beauty',upload.single('image'),  async function(req,res){
 try {
  if(req.file.size>5000000){
-  throw new Error("file size is more than 2mb")
+  throw new Error("file size is more than 5 mb")
  }
  const date= await bcrypt.hash(req.body.date, 10);
  const data= new beauty({
@@ -359,7 +359,7 @@ app.get('/hostel', async function(req,res){
  app.post('/hostel',  upload.single('image') ,async function(req,res){
   try{
     if (req.file.size > 5000000) {
-      throw new Error('File size exceeds the limit of 1 MB');
+      throw new Error('File size exceeds the limit of 5 MB');
     }
     const date= await bcrypt.hash(req.body.date, 10);
    const data= new hostel({

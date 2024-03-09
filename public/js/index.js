@@ -7,3 +7,13 @@ topic.addEventListener("click", function() {
         localStorage.setItem('alerted', 'yes'); // Set the flag in localStorage
     }
 });
+
+var mgs= localStorage.getItem('alerted') || '';
+var infor=document.querySelector('.new');
+infor.addEventListener('click',function(){
+    if (mgs !== 'yes') { // Check if the alert has not been shown before
+        alert("Your DOB will be your password");
+        localStorage.setItem('mgs', 'yes'); // Set the flag in localStorage
+    }
+
+});
