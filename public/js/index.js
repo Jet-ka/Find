@@ -8,7 +8,7 @@ topic.addEventListener("click", function() {
     }
 });
 
-var mgs= localStorage.getItem('alerted') || '';
+var mgs= localStorage.getItem('mgs') || '';
 var infor=document.querySelector('.new');
 infor.addEventListener('click',function(){
     if (mgs !== 'yes') { // Check if the alert has not been shown before

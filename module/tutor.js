@@ -4,6 +4,7 @@ const tutorSchema = new mongoose.Schema({
     image: { data: Buffer, contentType: String },
     name:String,
     sub:String,
+    qual:String,
     class:String, 
     state:String,
     loc:String,

@@ -137,6 +137,7 @@ const date= await bcrypt.hash(req.body.date, 10);
     },
     name:req.body.name,
     sub:req.body.sub,
+    qual:req.body.qual,
     class:req.body.class,
     state:req.body.state,
     loc:req.body.loc,
@@ -431,11 +432,11 @@ if(one && one._id==id){
 }else if(four && four._id==id){
   res.render('update.ejs',{id:id, infos:four});
 }else{
-  res.send("<p>soory bro wrok again</p>")
+  res.send("<p>Not working try again.</p>")
 }
 
 }catch{
-  console.log("error bro")
+  console.log("Internal server error")
 }
 
 });
@@ -449,6 +450,7 @@ app.post('/tutor/:id',upload.single('image'), async function(req,res){
       contentType: req.file.mimetype
     };
     const name=req.body.name;
+    const qual=req.body.qual;
     const sub=req.body.sub;
     const clas=req.body.class;
     const state=req.body.state;
@@ -456,7 +458,7 @@ app.post('/tutor/:id',upload.single('image'), async function(req,res){
     const fee=req.body.fee;
     const con=req.body.con;
    
-    const infos= await tutor.findByIdAndUpdate({_id:id},{$set:{image:image,name:name,sub:sub,class:clas,state:state,loc:loc,fee:fee,con:con}});
+    const infos= await tutor.findByIdAndUpdate({_id:id},{$set:{image:image,name:name,sub:sub,qual:qual,class:clas,state:state,loc:loc,fee:fee,con:con}});
    //console.log(result)
 res.redirect('/tutor');
   }catch{
